@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Librerias/Boostrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./Librerias/Boostrap/css/bootstrap-grid.min.css" type="text/css">
+    <script src="./Librerias/JQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./Librerias/Boostrap/css/bootstrap-reboot.min.css" type="text/css">
+</head>
+<body>
+    <script>
+       ( function() {
+            
+        
+        function sortNumber(a, b) {
+            return a-b;
+        }
+
+function __add(a){
+    var acum=0;
+    for(var i=0; i<a.length; i++){
+acum+=a[i];
+    }
+    return acum;
+}
+
+function __sort(a) {
+    return a.sort(sortNumber);
+}
+        function ramdomGenerator(callback) {
+            var cantidad=10 , ramdoms=[];
+            for(var i=0;i<cantidad; i++){
+                randoms.push(Math.floor(Math.random()*10)+1);
+            }
+            return typeof(callback)!=="undefined"? callback(ramdoms):ramdoms;
+        
+}
+console.log(randomGenerator());
+console.log(randomGenerator(__sort));
+
+})();
+    </script>
+
+</body>
+</html>

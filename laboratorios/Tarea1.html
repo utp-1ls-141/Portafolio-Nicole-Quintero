@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Palabra Isomorfica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="./Librerias/Boostrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="./Librerias/Boostrap/css/bootstrap-grid.min.css" type="text/css">
+  <script src="./Librerias/JQuery/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="./Librerias/Boostrap/css/bootstrap-reboot.min.css" type="text/css">
+  <script src="./Librerias/Boostrap/js/bootstrap.min.js "></script>
+</head>
+
+<body>
+  <div class="conteiner">
+    <center>
+      <h3>Palabra Isomorfica</h3>
+    </center>
+    <br>
+    <br>
+    <br>
+    <div class="col-md-8 offset-md-2 col-sm-6 offset-sm-3 col-xs-12 div class" style="height: 200px; background-color: violet;margin-top:10px  ">
+    <div class="Form ">
+            <div class="form-group ">
+              <label >Inserte la Palabra 1:</label>
+              <input type="text " class="form-control " id="pal1 " placeholder="Inserte su palabra 1 ">
+              <label >Inserte la Palabra 2:</label>
+              <input type="text " class="form-control " id="pal2 " placeholder="Inserte su palabra 2 ">
+            </div>
+            <button type="submit " id="enviar " class="btn btn-success btn-md ">Ok</button>
+          
+    </div>
+    </div>
+    
+    <script>
+      $(document).ready(function () {
+        $("#enviar ").click(function () {
+
+          str1 = document.getElementById("pal1 ").value;
+          str2 = document.getElementById("pal2 ").value;
+
+          var len1 = str1.length;
+          var bool = true;
+
+          if (len1 != str2.length) {
+            bool = false;
+          }
+
+          var chMap = {};
+
+          for (var i = 0; i < len1; i++) {
+
+            if (!chMap[str1[i]]) {
+              chMap[str1[i]] = str2[i];
+
+            } else if (chMap[str1[i]] !== str2[i]) {
+              bool = false;
+            }
+
+          }
+
+          if (bool == false) {
+            $("#error ").html("La Palabra no es Isomorfica ");
+            $("#successm ").html(" ");
+            $('#myModal').modal("show ");
+          }
+
+          else if (bool == true) {
+            $("#successm ").html("La Palabra es Isomorfica ");
+            $("#error ").html(" ");
+            $('#myModal').modal("show ");
+          }
+
+        });
+      });
+    </script> 
+  <!-- Modal -->
+  <div class="modal fade " id="myModal " role="dialog ">
+        <div class="modal-dialog modal-dialog-centered " role="document ">
+        
+          <!-- Modal content-->
+          <div class="modal-content ">
+            <div class="modal-header ">
+              
+              <h4 style="color:rgb(221, 59, 159) " class="modal-title ">Resultado</h4>
+            </div>
+            <div class="modal-body ">
+              <p style="color:rgb(255, 126, 6); font-weight: bold "  id="error "></p>
+              <p style="color:rgb(66, 255, 255); font-weight: bold "  id="successm "></p>
+            </div>
+            <div class="modal-footer ">
+              <button type="button " class="btn btn-default " data-dismiss="modal ">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+              </div>
+
+              
+
+</body>
+
+</html>
